@@ -6,6 +6,7 @@
             "email": "aaron@netready.biz"
         }
     ],
+    "license": "MIT",
     "require": {
         "aaronbell1/laravel-simple-csv-importer": "~1.0"
     },
