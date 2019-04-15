@@ -2,7 +2,7 @@
 
 namespace Aaronbell1\LaravelCsvBulkUploader;
 
-use Aaronbell1\LaravelCsvBulkUploader\Commands\MakeUploader;
+use Aaronbell1\LaravelCsvBulkUploader\Commands\MakeUploaderCommand;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelCsvBulkUploaderServiceProvider extends ServiceProvider
@@ -24,14 +24,9 @@ class LaravelCsvBulkUploaderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerCommands();
-    }
-
-    private function registerCommands()
-    {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                MakeUploader::class
+                MakeUploaderCommand::class
             ]);
         }
     }
