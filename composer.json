@@ -1,0 +1,22 @@
+{
+    "name": "aaronbell1/laravel-csv-bulk-uploader",
+    "authors": [
+        {
+            "name": "Aaron Bell",
+            "email": "aaron@netready.biz"
+        }
+    ],
+    "require": {
+        "aaronbell1/laravel-simple-csv-importer": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aaronbell1\\LaravelCsvBulkUploader\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aaronbell1\\LaravelCsvBulkUploader\\Tests\\": "tests/"
+        }
+    }
+}
