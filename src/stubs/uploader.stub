@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Uploaders;
+
+use Aaronbell1\LaravelCsvBulkUploader\BulkUploader;
+
+class DummyClass extends Model
+{
+    protected function rules()
+    {
+        return [];
+    }
+
+    protected function messages()
+    {
+        return [];
+    }
+
+    protected function saveRow($row)
+    {
+        // TODO: Implement saveRow() method.
+    }
+}

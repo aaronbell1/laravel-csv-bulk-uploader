@@ -2,6 +2,7 @@
 
 namespace Aaronbell1\LaravelCsvBulkUploader;
 
+use Aaronbell1\LaravelCsvBulkUploader\Commands\MakeUploader;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelCsvBulkUploaderServiceProvider extends ServiceProvider
@@ -10,7 +11,6 @@ class LaravelCsvBulkUploaderServiceProvider extends ServiceProvider
      * Register services.
      *
      * @return void
-     * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
     public function register()
     {
@@ -24,6 +24,15 @@ class LaravelCsvBulkUploaderServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->registerCommands();
+    }
+
+    private function registerCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                MakeUploader::class
+            ]);
+        }
     }
 }
