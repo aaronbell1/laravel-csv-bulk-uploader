@@ -19,5 +19,12 @@
         "psr-4": {
             "Aaronbell1\\LaravelCsvBulkUploader\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aaronbell1\\LaravelCsvBulkUploader\\LaravelCsvBulkUploaderServiceProvider"
+            ]
+        }
     }
 }
