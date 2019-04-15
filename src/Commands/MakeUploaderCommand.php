@@ -3,6 +3,7 @@
 namespace Aaronbell1\LaravelCsvBulkUploader\Commands;
 
 use Illuminate\Console\GeneratorCommand;
+use Illuminate\Support\Str;
 
 class MakeUploaderCommand extends GeneratorCommand
 {
@@ -34,6 +35,6 @@ class MakeUploaderCommand extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'../stubs/uploader.stub';
+        return __DIR__.'/../stubs/uploader.stub';
     }
 }
