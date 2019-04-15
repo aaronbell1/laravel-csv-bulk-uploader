@@ -92,7 +92,23 @@ abstract class BulkUploader
      */
     private function createValidator($data)
     {
-        $this->validator = Validator::make($data, $this->rules(), $this->messages());
+        $this->validator = Validator::make($data, $this->rulesAsArray(), $this->messagesAsArray());
+    }
+
+    /**
+     * @return array
+     */
+    private function rulesAsArray()
+    {
+        return $this->prefixKeys($this->rules());
+    }
+
+    /**
+     * @return array
+     */
+    private function messagesAsArray()
+    {
+        return $this->prefixKeys($this->messages());
     }
 
     /**
@@ -131,5 +147,18 @@ abstract class BulkUploader
         }
 
         return $str;
+    }
+
+    /**
+     * @param $array
+     * @param string $prefix
+     * @return array
+     */
+    private function prefixKeys($array, $prefix = '*.')
+    {
+        return array_combine(
+            array_map(function($key)use($prefix){ return $prefix.$key; }, array_keys($array)),
+            $array
+        );
     }
 }
