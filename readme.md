@@ -190,7 +190,7 @@ public function store()
     if($isValid) {
       $userUploader->save();
     } else {
-      return $userUplader->redirectWithErrors('users');
+      return $userUploader->redirectWithErrors('users');
     }
 }
 ```
