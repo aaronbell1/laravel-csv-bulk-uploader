@@ -5,9 +5,9 @@ The bulk uploader is intended to allow users to have a simple way to validate an
 The package makes use of Laravel validators to validate the data, and Laravel DB object to commit records to the Database.
 
 ## Table of Contents  
-[Installation](#installation)  
-[Creating bulk uploader](#creating-bulk-uploader) 
-[Usage](#usage) 
+- [Installation](#installation)
+- [Creating bulk uploader](#creating-bulk-uploader)
+- [Usage](#usage)
 
 ## Installation
 
