@@ -38,6 +38,11 @@ abstract class BulkUploader
      */
     abstract protected function saveRow($row);
 
+    protected function before()
+    {
+        return;
+    }
+
     /**
      * @throws \Exception
      */
@@ -45,6 +50,8 @@ abstract class BulkUploader
     {
         DB::beginTransaction();
         try {
+            $this->before();
+
             foreach ($this->loader->data as $row) {
                 $this->saveRow($row);
             }
